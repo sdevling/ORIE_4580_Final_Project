@@ -519,13 +519,6 @@ def run_demo():
     # Return raw results for further analysis and plotting
     return r1, r2
 
-"""
-def moving_avg(x, w=200):
-    if len(x) < w:
-        return x
-    return np.convolve(x, np.ones(w)/w, mode="valid")
-"""
-
 def plot_demo(r1, r2):
     # Plot smoothed TTFT
     plt.figure(figsize=(8,5))
@@ -705,7 +698,8 @@ def run_phase_transition_validation():
     print("\nIdea 2 validation finished.")
     return res
 
-phase_results = run_phase_transition_validation()
+if __name__ == "__main__":
+  phase_results = run_phase_transition_validation()
 
 """For this part it is validating how the simulator reacts when arrival rate is inreased. Ran on same simulation but changing lamnda each time and estimating average quieries in the system at a time.
 
